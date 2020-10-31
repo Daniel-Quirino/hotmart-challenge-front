@@ -1,95 +1,95 @@
-.header {
-    display: flex;
-    flex-direction: column;
-    min-height: 226px;
-    border-radius: 10px;
-    margin: 10px;
-    background-color:#00d7ce;
-    color: white;
+.header__grid {
+    display: grid;
+    align-items: flex-start;;
+    justify-items: center;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 50px 180px;
+
+    column-gap: 1px;
+
+    padding: 30px 50px 30px 50px;
 }
+
 
 .header__title {
-    display: flex;
-    margin-left: 30px;
     font-size: 20px;
     color: white;
-}
 
-.header__space_around {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-}
-
-.header__primary_list {
-    flex-grow: 2;
-}
-
-.header__flex {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    padding: 10px;
-    min-width: 300px;
-    margin: 20px;
-}
-
-
-.header__column {
-    display: flex;
-    flex-direction: column;
+    justify-self: start;
+    background-color: red;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .header__resume {
-    display: flex;
-    flex-direction: column;
+    background-color: blue;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
 }
 
 .header__item {
     display: flex;
 }
 
-.margin {
-    padding: 20px;
-}
-
 .header__label {
     display: flex;
     flex-direction: column;
     margin: 5px;
+    color: white;
 }
 
 .header__paragraph {
     display: flex;
     flex-direction: column;
     margin: 5px;
+    color: white;
 }
 
+.header__coste {
+    display: flex;
+    background-color: green;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;    
+}
+
+.header__education {
+    display: flex;
+    flex-direction: row;
+    background-color: pink;
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;    
+}
+
+.header__container {
+    background-color: skyblue;
+    border-radius: 10px;
+    margin: 30px;
+}
 
 hr {
     height: 100px;
     width: 0px;
     border-left: 1px solid white;
-    margin: 0px;
+    margin: 20px;
 }
 
-
-.header__group {
+.teste {
     display: flex;
-    max-width: 350px;
-}
-
-.header__grid {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-left: 50px;
 }
 
 
-@media(max-width: 900px) {
-    .header__space_around {
-        flex-wrap: wrap;
+@media(max-width: 950px) {
+    .header__grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header__education {
+        flex-direction: column;
+    }
+
+    .header__coste {
         flex-direction: column;
     }
 
@@ -98,8 +98,6 @@ hr {
         height: 0px;
         border-top: 1px solid white;
     }
-
-    .header__flex {
-        flex-direction: column;
-    }
+    
 }
+
