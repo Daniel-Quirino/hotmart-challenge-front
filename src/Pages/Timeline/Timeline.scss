@@ -69,3 +69,10 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+@media(max-width: 950px) {
+  .timeline__grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
