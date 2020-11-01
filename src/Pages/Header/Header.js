@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './QuickOps.scss';
+import './Header.scss';
 
-const QuickOps = () => {
+const Header = () => {
   return (
       <header className='header__container'>
         <div className='header__grid'>
@@ -48,4 +48,4 @@ const QuickOps = () => {
   );
 }
 
-export default QuickOps;
+export default Header;

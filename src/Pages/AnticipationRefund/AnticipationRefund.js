@@ -1,17 +1,17 @@
 import React from 'react';
-import QuickOps from '../QuickOps';
+import Header from '../Header';
 import Timeline from '../Timeline';
 
-import './Home.scss';
+import './AnticipationRefund.scss';
 
-const Home = () => {
+const AnticipationRefund = () => {
   console.log('Passou aqui')
   return (
       <div>
-        <QuickOps />
+        <Header />
         <Timeline />
       </div>
   );
 }
 
-export default Home;
+export default AnticipationRefund;
