@@ -39,7 +39,7 @@ const Timeline = () => {
 
   useEffect(() => {
     console.log(state);
-  },[]);
+  });
 
   return (
     <li className='timeline' >
