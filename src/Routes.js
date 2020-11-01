@@ -1,15 +1,14 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import QuickOps from './Pages/QuickOps';
-import Timeline from './Pages/Timeline';
+import AnticipationRefund from './Pages/AnticipationRefund/AnticipationRefund';
 
 
 export const Routes = () => {
   return (
     <BrowserRouter>
         <Switch>
-            <Route path="/" exact={true} component={Timeline} />
+            <Route path="/" exact={true} component={AnticipationRefund} />
         </Switch>
     </BrowserRouter>  
   );
