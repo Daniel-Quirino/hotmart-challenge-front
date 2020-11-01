@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+import { handleHeaderTitle } from './utils';
+
 import { Store } from '../../Infrastructure/Store/Store';
 import doGetHeader from '../../Infrastructure/Actions/Header';
 
@@ -21,7 +23,7 @@ const Header = () => {
   return (
       <header className='header__container'>
         <div className='header__grid'>
-          <strong className='header__title'> {header && header.id ? header.type + ' - ' + header.id.toString() : 'Reembolso ou Adiantamento' } </strong>
+          <strong className='header__title'> {handleHeaderTitle(header)} </strong>
           <ul className='header__resume'>
             <li className='header__item'>
               <strong className='header__label' > Justificativa: </strong>
