@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { Store } from '../../Infrastructure/Store/Store';
+import doGetHeader from '../../Infrastructure/Actions/Header';
 
 import './Header.scss';
 
 const Header = () => {
+  const { state, dispatch } = React.useContext(Store);
+  const [ header, setHeader ] = React.useState();
+
+  useEffect(() => {
+    doGetHeader(dispatch);
+  }, []);
+
+  useEffect(() => {
+    if(state.header) setHeader(state.header);
+    console.log(state);
+  }, [state]);
+
   return (
       <header className='header__container'>
         <div className='header__grid'>
-          <strong className='header__title'> Reembolso - Confraternização </strong>
+          <strong className='header__title'> {header && header.id ? header.type + ' - ' + header.id.toString() : 'Reembolso ou Adiantamento' } </strong>
           <ul className='header__resume'>
             <li className='header__item'>
               <strong className='header__label' > Justificativa: </strong>

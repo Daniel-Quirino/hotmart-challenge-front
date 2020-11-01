@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const initialState = {
   company: 'Hotmart',
+  header: {}
 };
 
 export const Store = createContext(initialState);
@@ -13,15 +14,10 @@ export const useAppContext = () => useContext(Store);
 
 export function reducer(state, action) {
   switch (action.type) {
-    case 'USER':
+    case 'HEADER':
       return {
         ...state,
-        user: action.payload
-      }
-    case 'ANOTHER_USER':
-      return {
-        ...state,
-        anotherUser: action.payload
+        header: action.payload
       }
     default:
       return { ...state };

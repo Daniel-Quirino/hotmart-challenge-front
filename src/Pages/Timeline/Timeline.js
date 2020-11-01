@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-
-import { Store } from '../../Infrastructure/Store/Store';
+import React from 'react';
 
 import './Timeline.scss';
 
@@ -35,12 +33,6 @@ const renderReceipt = () => {
 
 
 const Timeline = () => {
-  const { state } = React.useContext(Store);
-
-  useEffect(() => {
-    console.log(state);
-  });
-
   return (
     <li className='timeline' >
       <ul className='timeline__grid ' >
