@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
 li {
   list-style-type: none;
 }
@@ -6,4 +9,14 @@ li {
 ul {
   padding: 0px;
   padding: 0px;
+}
+
+body {
+  font-family: 'Nunito Sans', cursive;
+  background-color: #f4f6fa;
+}
+
+a {
+  color: #51c1c3;
+  text-decoration: none;
 }
