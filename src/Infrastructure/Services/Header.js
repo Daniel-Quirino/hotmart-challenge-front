@@ -2,7 +2,9 @@ import axios from 'axios';
 
 export const getHeader = () => {
     return new Promise((resolve, reject) => {
-      axios.get('https://api-front-end-challenge.buildstaging.com/api/header')
+      const URL_HEADER = 'https://api-front-end-challenge.buildstaging.com/api/header';
+
+      axios.get(URL_HEADER)
         .then(async res => {
             resolve(res.data);
         }).catch((error) => {

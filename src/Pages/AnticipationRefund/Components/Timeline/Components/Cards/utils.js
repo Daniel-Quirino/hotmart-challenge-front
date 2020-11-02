@@ -1,11 +1,15 @@
-import { enumExpenseTypes } from '../../../../Enum/Timeline';
+import { enumExpenseTypes, enumCardTypes } from '../../../../../../Enum/Timeline';
 
 export const getExpenseType = (type) => {
   return enumExpenseTypes[type];
 }
 
+export const formatCardType = (type, name) => {
+  return `${enumCardTypes[type]} ${name}`;
+}
+
 export const formatedApprovedValue = (symbol, value) => {
-  return `Valor da nota: ${symbol}  ${value}`
+  return symbol + value;
 }
 
 export const formatedSpentValue = (symbol, value) => {

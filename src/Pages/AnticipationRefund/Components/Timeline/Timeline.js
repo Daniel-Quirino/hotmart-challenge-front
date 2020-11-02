@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 
 import { renderExpenseCard } from './Components/Cards/ExpansiveCard';
+import { renderAccountAbilityCard } from './Components/Cards/AccountAbilityCard';
+import { evaluationCard } from './Components/Cards/EvaluationCard';
 import { Store } from '../../../../Infrastructure/Store/Store';
 import doGetTimeline from '../../../../Infrastructure/Actions/Timeline';
 
@@ -22,15 +24,15 @@ const Timeline = () => {
   const renderTimelineList = () => {
     return (
       timeline.content.map((itemTimeline) => {
-        switch(itemTimeline.cardType  ) {
+        switch(itemTimeline.cardType) {
           case 'EXPENSE':
             return renderExpenseCard(itemTimeline);
           case 'ACCOUNTABILITY_SUBMITTED':
-            return renderExpenseCard(itemTimeline);
+            return renderAccountAbilityCard(itemTimeline);
           case 'ACCOUNTABILITY_CREATED':
-            return renderExpenseCard(itemTimeline);
+            return renderAccountAbilityCard(itemTimeline);
           case 'EVALUATION':
-            return renderExpenseCard(itemTimeline);
+            return evaluationCard(itemTimeline);
           default:
             return <div key={itemTimeline.id}></div>
         }

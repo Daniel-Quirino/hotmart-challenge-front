@@ -1,11 +1,10 @@
 import { renderFontAwesomeIcon } from '../Icons/Icons';
 import { formatTimeSpanToDefault } from '../../../../../../Common/date';
+import { formatCardType } from './utils'
 import { formatedStatus } from '../Cards/Status';
-import { 
-  getExpenseType, 
-  formatedApprovedValue,
-  formatedSpentValue
-} from './utils';
+import { formatedSpentValue } from './utils';
+
+import './EvaluationCard.scss';
 
 const renderExpanseCardIconData = (item) => {
   return (
@@ -22,18 +21,7 @@ const renderExpanseCardIconData = (item) => {
 
 const renderExpanseCardtype = (label, strongText, text) => {
   return (
-    <li className='timeline__action' key={label + text}>
-      <p className='timeline__label'> {label} </p>
-      <p className='timeline__strong_text'> {strongText} </p>
-      <p className='timeline__text'> {text} </p>
-    </li>
-  )
-}
-
-
-const renderExpanseCardValue = (label, strongText, text) => {
-  return (
-    <li className='timeline__value' key={label + text}>
+    <li className='timeline__type' key={label + text}>
       <p className='timeline__label'> {label} </p>
       <p className='timeline__strong_text'> {strongText} </p>
       <p className='timeline__text'> {text} </p>
@@ -61,12 +49,11 @@ const renderExpanseCardReceipt = (id) => {
   )
 }
 
-export const renderExpenseCard = (item) => {
+export const evaluationCard = (item) => {
   return (
     <ul className='timeline__grid' key={item.id}>
       {renderExpanseCardIconData(item)}
-      {renderExpanseCardtype('Tipo', getExpenseType(item.expenseTypeCode), ' - ')}
-      {renderExpanseCardValue('Valor', formatedApprovedValue(item.currencySymbol, item.amountTotal), formatedSpentValue(item.currencySymbol, item.amountSpent))}
+      {renderExpanseCardtype('Tipo', formatCardType(item.cardType, item.author.name))}
       {renderExpanseCardStatus('Status', item.status, formatedSpentValue(item.currencySymbol, item.amountSpent))}
       {renderExpanseCardReceipt(item.id)}
     </ul>
