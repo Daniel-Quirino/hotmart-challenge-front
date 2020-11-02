@@ -1,20 +1,22 @@
 .timeline {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
+  background-color: #f4f6fa;
   border-radius: 10px;
 }
+
 
 .timeline__grid {
   display: grid;
   align-items: center;
   justify-items: start;
+  background-color: white;
 
+  border-radius: 10px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 140px;
-
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px; 
+  margin: 30px  auto;
 }
+
 
 .timeline__icon {
   grid-column: 1 / 2;
@@ -36,17 +38,13 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #e7f2fd;;
+  background-color: #e7f2fd;
 }
 
-.timeline__concierge_bell-color {
-  color: #0f68bd;
-}
 
 .timeline__note_icon-color {
   color: #51c1c3;
 }
-
 
 .fa-home {
   color: green;

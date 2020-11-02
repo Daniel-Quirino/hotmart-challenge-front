@@ -1,33 +1,29 @@
 import React, { useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faConciergeBell } from '@fortawesome/free-solid-svg-icons';
-import { faReceipt } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '../../../../Infrastructure/Store/Store';
 import doGetTimeline from '../../../../Infrastructure/Actions/Timeline';
-
+import { renderFontAwesomeIcon } from './Components/Icons';
+import { formatTimeSpanToDefault } from '../../../../Common/date';
 
 import './Timeline.scss';
+import timeline from '../../../../Mocks/timeline';
 
-const renderIcon = () => {
+
+const renderExpanseCardIconData = (item) => {
   return (
-    <div className='timeline__icon'>
+    <li className='timeline__icon'>
       <div className='timeline__icon-flex'>            
         <div className='timeline__icon-radius'>
-          <FontAwesomeIcon 
-            className='timeline__concierge_bell-color'
-            icon={faConciergeBell} 
-            size="3x"
-          />
+          {renderFontAwesomeIcon(item.cardType, item.expenseTypeCode)}
         </div>
-        <p className='timeline__text'>21/05/2019</p>
+      <p className='timeline__text'>{formatTimeSpanToDefault(item.cardDate)}</p>
       </div>
-    </div>
+    </li>
   )
 }
 
 
-const renderTimelineAction = (label, strongText, text) => {
+const renderExpanseCardAction = (label, strongText, text) => {
   return (
     <li className='timeline__action'>
       <p className='timeline__label'> {label} </p>
@@ -37,7 +33,7 @@ const renderTimelineAction = (label, strongText, text) => {
   )
 }
 
-const renderTimelineValue = (label, strongText, text) => {
+const renderExpanseCardValue = (label, strongText, text) => {
   return (
     <li className='timeline__value'>
       <p className='timeline__label'> {label} </p>
@@ -47,7 +43,7 @@ const renderTimelineValue = (label, strongText, text) => {
   )
 }
 
-const renderTimelineStatus = (label, aproveButtonText, deductibleButtonText, text) => {
+const renderExpanseCardStatus = (label, aproveButtonText, deductibleButtonText, text) => {
   return (
     <li className='timeline__status'>
       <p className='timeline__label'> {label} </p>
@@ -74,17 +70,50 @@ const deductibleText = () => {
   )
 }
 
-const renderReceipt = () => {
+const renderExpanseCardReceipt = () => {
   return (
     <li className='timeline__receipt'>
       <a href='http://localhost:3000' className='timeline__link'>
-        <FontAwesomeIcon 
-          className='timeline__note_icon-color'
-          icon={faReceipt} 
-          size="1x" 
-        /> Ver nota fiscal
+        {renderFontAwesomeIcon('RECEIPT')} Ver nota fiscal
       </a>
     </li>
+  )
+}
+
+const renderExpenseCard = (item) => {
+  return (
+    <li className='timeline__grid'>
+      {renderExpanseCardIconData(item)}
+      {renderExpanseCardAction('Ação', 'Almoço', 'Almoço com cliente')}
+      {renderExpanseCardValue('Valor', 'BRL 3.458,94', 'Valor da nota: BRL 220,00')}
+      {renderExpanseCardStatus('Status', 'Aprovado', 'Dedutível', 'Valor aprovação 220,00')}
+      {renderExpanseCardReceipt()}
+    </li>
+  )
+}
+
+const renderTimelineList = () => {
+  return (
+    timeline.content.map(itemTimeline => {
+      switch(itemTimeline.cardType  ) {
+        case 'EXPENSE':
+          return renderExpenseCard(itemTimeline);
+        case 'ACCOUNTABILITY_SUBMITTED':
+          return renderExpenseCard(itemTimeline);
+        case 'EVALUATION':
+          return renderExpenseCard(itemTimeline);
+        default:
+          return <></>
+      }
+    })
+  )
+}
+
+const renderTimeline = () => {
+  return (
+    <ul className='flex_column' >
+      {renderTimelineList()}
+    </ul>
   )
 }
 
@@ -99,20 +128,14 @@ const Timeline = () => {
 
   useEffect(() => {
     if(state.timeline) setTimeline(state.timeline);
-    console.log(state)
   }, [state]);
 
-  
+  if(!timeline)
+    return <></>
 
   return (
     <div className='timeline' >
-      <ul className='timeline__grid ' >
-        {renderIcon()}
-        {renderTimelineAction('Ação', 'Almoço', 'Almoço com cliente')}
-        {renderTimelineValue('Valor', 'BRL 3.458,94', 'Valor da nota: BRL 220,00')}
-        {renderTimelineStatus('Status', 'Aprovado', 'Dedutível', 'Valor aprovação 220,00')}
-        {renderReceipt()}
-      </ul>
+      {renderTimeline()}
     </div>
   );
 }
