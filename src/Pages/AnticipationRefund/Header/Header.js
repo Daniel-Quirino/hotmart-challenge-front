@@ -4,8 +4,8 @@ import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 import { handleHeaderTitle } from './utils';
 
-import { Store } from '../../Infrastructure/Store/Store';
-import doGetHeader from '../../Infrastructure/Actions/Header';
+import { Store } from '../../../Infrastructure/Store/Store';
+import doGetHeader from '../../../Infrastructure/Actions/Header';
 
 import './Header.scss';
 

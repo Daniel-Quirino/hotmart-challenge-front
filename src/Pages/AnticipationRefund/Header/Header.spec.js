@@ -1,5 +1,5 @@
 import { handleHeaderTitle } from './utils';
-import header from '../../Mocks/header';
+import header from '../../../Mocks/header';
 
 describe('QuickOps Header', () => {
   describe('Format header', () => {

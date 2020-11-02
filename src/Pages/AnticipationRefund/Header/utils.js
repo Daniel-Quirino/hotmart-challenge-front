@@ -1,4 +1,4 @@
-import { enumTypes , enumPurposes } from '../../Enum/Header';
+import { enumTypes , enumPurposes } from '../../../Enum/Header';
 
 export const handleHeaderTitle = (header) => {
   
