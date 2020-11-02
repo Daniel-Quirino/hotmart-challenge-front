@@ -67,7 +67,11 @@ const Header = () => {
   const renderIsEducationBudget = (isEducation) => {
     return (
       <div className='header__education'>
-        <FontAwesomeIcon icon={faGraduationCap} size="2x"/>
+        <FontAwesomeIcon 
+          className='header__education_icon-color'
+          icon={faGraduationCap} 
+          size="2x"
+        />
     <p className='header__paragraph'> Esta solicitação {isEducation ? '' : <b>não</b>} será paga com o Budget de educação / confraternização. </p>
       </div>
     )
