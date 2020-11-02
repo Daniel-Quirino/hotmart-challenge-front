@@ -2,7 +2,9 @@ import axios from 'axios';
 
 export const getTimeline = () => {
     return new Promise((resolve, reject) => {
-      axios.get('https://api-front-end-challenge.buildstaging.com/api/timeline')
+      const URL_TIMELINE = 'https://api-front-end-challenge.buildstaging.com/api/timeline';
+
+      axios.get(URL_TIMELINE)
         .then(async res => {
             resolve(res.data);
         }).catch((error) => {

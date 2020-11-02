@@ -1,0 +1,23 @@
+.timeline__grid {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  background-color: white;
+
+  border-radius: 10px;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 140px;
+  padding: 10px; 
+  margin: 30px  auto;
+}
+
+.timeline__icon {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding-left: 30px;
+}
+
+.timeline__type {
+  grid-column: 2 / 6;
+  grid-row: 1 / 2;
+}

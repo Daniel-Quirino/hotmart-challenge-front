@@ -2,7 +2,7 @@ import { formatTimeSpanToDefault } from '../../../../Common/date';
 import { 
   getExpenseType,
   formatedApprovedValue
-} from './utils';
+} from './Components/utils';
 
 import timeline from '../../../../Mocks/timeline';
 

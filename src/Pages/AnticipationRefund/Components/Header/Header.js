@@ -34,7 +34,7 @@ const Header = () => {
 
   const renderHeaderResumeItem = (label, paragraph) => {
     return(
-      <li className='header__item'>
+      <li className='header__item' key={label+paragraph}>
         <strong className='header__label' > {label}: </strong>
         <p className='header__paragraph' > {paragraph} </p>
       </li>
@@ -45,7 +45,7 @@ const Header = () => {
     return (
       <div className='header__coste'>
         <ul >
-          <li>
+          <li key={costCenters}>
             <strong className='header__label' > Centro de Custo: </strong>
           </li>
           {renderListOfCostCenters(costCenters)}
@@ -57,7 +57,7 @@ const Header = () => {
   const renderListOfCostCenters = (costCenters) => {
     return costCenters.map(cost => {
       return (
-        <li className='header__item'>
+        <li className='header__item' key={cost.id}>
           <p className='header__paragraph'> {`${cost.percentage}% - ${cost.reviser.name}`} </p>
         </li>
       )
