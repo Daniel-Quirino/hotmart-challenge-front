@@ -3,9 +3,9 @@ import {
   getTypeByIdentifier, 
   getPurposeByIdentifier, 
   formatAmountOfPeople
-} from './utils';
+} from '../../Pages/AnticipationRefund/Components/Header/utils';
 
-import header from '../../../../Mocks/header';
+import header from '../../Mocks/header';
 
 describe('QuickOps Header', () => {
   describe('Format header', () => {
