@@ -5,6 +5,10 @@ export const getExpenseType = (type) => {
 }
 
 export const formatedApprovedValue = (symbol, value) => {
-  return symbol + value.toString();
+  return `Valor da nota: ${symbol}  ${value}`
+}
+
+export const formatedSpentValue = (symbol, value) => {
+  return `Valor aprovado: ${symbol}  ${value}`
 }
 
