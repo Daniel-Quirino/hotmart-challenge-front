@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faConciergeBell } from '@fortawesome/free-solid-svg-icons';
 import { faReceipt } from '@fortawesome/free-solid-svg-icons';
+
+import { Store } from '../../../../Infrastructure/Store/Store';
+import doGetTimeline from '../../../../Infrastructure/Actions/Timeline';
+
 
 import './Timeline.scss';
 
@@ -86,6 +90,20 @@ const renderReceipt = () => {
 
 
 const Timeline = () => {
+  const { state, dispatch } = React.useContext(Store);
+  const [ timeline, setTimeline ] = React.useState([]);
+
+  useEffect(() => {
+    doGetTimeline(dispatch);
+  }, []);
+
+  useEffect(() => {
+    if(state.timeline) setTimeline(state.timeline);
+    console.log(state)
+  }, [state]);
+
+  
+
   return (
     <div className='timeline' >
       <ul className='timeline__grid ' >
