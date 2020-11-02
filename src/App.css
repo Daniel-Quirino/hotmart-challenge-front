@@ -20,3 +20,13 @@ a {
   color: #51c1c3;
   text-decoration: none;
 }
+
+
+.flex_column {
+  
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
