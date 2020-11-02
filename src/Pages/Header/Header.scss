@@ -1,68 +1,62 @@
 .header__grid {
     display: grid;
-    align-items: flex-start;
-    justify-items: center;
-
-    grid-template-columns: 1.5fr 1fr 1fr;
+    align-items: start;
+    justify-items: start;
+    grid-template-columns: 1.25fr 0.25fr 1fr 0.25fr 1fr;
     grid-template-rows: 50px 180px;
-
-    column-gap: 1px;
-
-    padding: 30px 50px 30px 50px;
+    padding: 25px 40px;
 }
 
 
 .header__title {
     font-size: 20px;
     color: white;
-
     justify-self: start;
-    background-color: red;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
 }
 
 .header__resume {
-    background-color: blue;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 }
 
 .header__item {
     display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
 }
 
 .header__label {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
+    font-size: 16px;
     color: white;
+    font-weight: bold;
 }
 
 .header__paragraph {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
     color: white;
+    font-size: 16px;
+    margin: 0px;
+    margin-left: 2px;
 }
 
 .header__coste {
     display: flex;
-    background-color: green;
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     grid-row: 2 / 3;    
 }
 
 .header__education {
     display: flex;
-    flex-direction: row;
-    background-color: pink;
-    grid-column: 3 / 4;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 5 / 6;
     grid-row: 2 / 3;    
 }
 
+
 .header__container {
-    background-color: skyblue;
+    background-color: #00c5fc;
     border-radius: 10px;
     margin: 30px;
 }
@@ -71,7 +65,19 @@ hr {
     height: 100px;
     width: 0px;
     border-left: 1px solid white;
-    margin: 20px;
+}
+
+.header__hr1 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;    
+}
+
+.header__hr2 {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;    
 }
 
 .teste {
@@ -93,8 +99,14 @@ hr {
         flex-direction: column;
     }
 
+    .header__grid {
+        align-items: inherit;
+    }
+
+
+
     hr {
-        width: 100px;
+        width: 300px;
         height: 0px;
         border-top: 1px solid white;
     }    

@@ -3,31 +3,21 @@ import header from '../../Mocks/header';
 
 describe('QuickOps Header', () => {
   describe('Format header', () => {
-    it('format header with correct type and id', () => {
+    it('format header with correct type and purpose', () => {
       const title = handleHeaderTitle(header);
-      expect(title).toEqual('Reembolso - 756');
+      expect(title).toEqual('Reembolso - Confraternização');
     });
 
-    it('format header with type ADVANCE', () => {
-      let mockTitle = {...header, type: 'ADVANCE'};
+    it('format header with type ADVANCE and purpose empty', () => {
+      let mockTitle = {...header, type: 'ADVANCE', purpose: ''};
       const title = handleHeaderTitle(mockTitle);
-      expect(title).toEqual('Adiantamento - 756');
+      expect(title).toEqual('Adiantamento - Sem motivo');
     });
 
-    it('format header with incorrect empty type', () => {
-      let mockTitle = {...header, type: ''};
+    it('format header with incorrect empty type and FRATERNIZATION purpose', () => {
+      let mockTitle = {...header, type: '', purpose: 'FRATERNIZATION'};
       const title = handleHeaderTitle(mockTitle);
-      expect(title).toEqual('Reembolso ou Adiantamento...');
+      expect(title).toEqual('Sem tipo - Confraternização');
     });
-
-    it('format header with incorrect empty id', () => {
-      let mockTitle = {...header, id: ''};
-      const title = handleHeaderTitle(mockTitle);
-      expect(title).toEqual('Reembolso ou Adiantamento...');
-    });
-
-
-
-
   });
 });
