@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { renderExpenseCard } from './Components/Cards/ExpansiveCard';
-import { renderAccountAbilityCard } from './Components/Cards/AccountAbilityCard';
-import { evaluationCard } from './Components/Cards/EvaluationCard';
+import { renderExpenseCard } from './Components/ExpansiveCard/ExpansiveCard';
+import { renderAccountAbilityCard } from './Components/AccountAbilityCard/AccountAbilityCard';
+import { evaluationCard } from './Components/EvaluationCard/EvaluationCard';
 import { Store } from '../../../../Infrastructure/Store/Store';
 import doGetTimeline from '../../../../Infrastructure/Actions/Timeline';
 

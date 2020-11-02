@@ -1,6 +1,6 @@
 import { renderFontAwesomeIcon } from '../Icons/Icons';
 import { formatTimeSpanToDefault } from '../../../../../../Common/date';
-import { formatCardType } from './utils'
+import { formatCardType } from '../utils'
 import './AccountAbilityCard.scss';
 
 export const renderExpanseCardIconData = (item) => {
