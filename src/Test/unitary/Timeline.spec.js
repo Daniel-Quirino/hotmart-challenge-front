@@ -1,10 +1,10 @@
-import { formatTimeSpanToDefault } from '../../../../Common/date';
+import { formatTimeSpanToDefault } from '../../Common/date';
 import { 
   getExpenseType,
   formatedApprovedValue
-} from './Components/utils';
+} from '../../Pages/AnticipationRefund/Components/Timeline/Components/utils';
 
-import timeline from '../../../../Mocks/timeline';
+import timeline from '../../Mocks/timeline';
 
 describe('QuickOps Timeline', () => {
   describe('Format Tiemline Data', () => {
