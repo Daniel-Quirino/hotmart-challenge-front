@@ -1,5 +1,13 @@
+$background-color: #f4f6fa;
+$background-timeline: white;
+$background-icon: #e7f2fd;
+$strong-text-color: #545b64;
+$link-color: #51c1c3;
+$label-color: #d0d3d6;
+
+
 .timeline {
-  background-color: #f4f6fa;
+  background-color: $background-color;
   border-radius: 10px;
 }
 
@@ -8,7 +16,7 @@
   display: grid;
   align-items: center;
   justify-items: start;
-  background-color: white;
+  background-color: $background-timeline;
 
   border-radius: 10px;
   grid-template-columns: repeat(5, 1fr);
@@ -38,31 +46,34 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #e7f2fd;
+  background-color: $background-icon;
+  justify-content: center;
 }
 
 
 .timeline__note_icon-color {
-  color: #51c1c3;
-}
-
-.fa-home {
-  color: green;
+  color: $link-color;
 }
 
 .timeline__action {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline__value {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline__status {
   grid-column: 4 / 5;
   grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline__receipt {
@@ -77,7 +88,7 @@
 }
 
 .timeline__label {
-  color: #d0d3d6;
+  color: $label-color;
   font-size: 14px;
   font-weight: bold;
   margin: 5px;
@@ -86,7 +97,7 @@
 .timeline__strong_text {
   font-size: 20px;
   font-weight: bold;
-  color: #545b64;
+  color: $strong-text-color;
   margin: 5px;
 }
 

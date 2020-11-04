@@ -1,6 +1,6 @@
-import { renderFontAwesomeIcon } from '../Icons/Icons';
+import { renderFontAwesomeIcon } from '../../../Icons/Icons';
 import { formatTimeSpanToDefault } from '../../../../../../Common/date';
-import { formatedStatus } from '../Status/Status';
+import { formatedStatus } from '../../../Status/Status';
 import { formatedSpentValue, formatCardType } from '../utils';
 
 import './EvaluationCard.scss';
@@ -12,7 +12,7 @@ const renderExpanseCardIconData = (item) => {
         <div className='timeline__icon-radius'>
           {renderFontAwesomeIcon(item.cardType, item.expenseTypeCode)}
         </div>
-      <p className='timeline__text'>{formatTimeSpanToDefault(item.cardDate)}</p>
+      <span className='timeline__text'>{formatTimeSpanToDefault(item.cardDate)}</span>
       </div>
     </li>
   )
@@ -21,9 +21,9 @@ const renderExpanseCardIconData = (item) => {
 const renderExpanseCardtype = (label, strongText, text) => {
   return (
     <li className='timeline__type' key={label + text}>
-      <p className='timeline__label'> {label} </p>
-      <p className='timeline__strong_text'> {strongText} </p>
-      <p className='timeline__text'> {text} </p>
+      <span className='timeline__label'> {label} </span>
+      <span className='timeline__strong_text'> {strongText} </span>
+      <span className='timeline__text'> {text} </span>
     </li>
   )
 }
@@ -31,9 +31,9 @@ const renderExpanseCardtype = (label, strongText, text) => {
 const renderExpanseCardStatus = (label, status, text) => {
   return (
     <li className='timeline__status' key={label + text}>
-      <p className='timeline__label'> {label} </p>
+      <span className='timeline__label'> {label} </span>
       {formatedStatus(status)}
-      <p className='timeline__text'> {text} </p>
+      <span className='timeline__text'> {text} </span>
     </li>
   )
 }

@@ -1,4 +1,4 @@
-import { renderFontAwesomeIcon } from '../Icons/Icons';
+import { renderFontAwesomeIcon } from '../../../Icons/Icons';
 import { formatTimeSpanToDefault } from '../../../../../../Common/date';
 import { formatCardType } from '../utils'
 import './AccountAbilityCard.scss';
@@ -10,7 +10,7 @@ export const renderExpanseCardIconData = (item) => {
         <div className='timeline__icon-radius'>
           {renderFontAwesomeIcon(item.cardType, item.expenseTypeCode)}
         </div>
-      <p className='timeline__text'>{formatTimeSpanToDefault(item.cardDate)}</p>
+      <span className='timeline__text'>{formatTimeSpanToDefault(item.cardDate)}</span>
       </div>
     </li>
   )
@@ -19,9 +19,9 @@ export const renderExpanseCardIconData = (item) => {
 const renderExpanseCardtype = (label, strongText, text) => {
   return (
     <li className='timeline__type' key={label + text}>
-      <p className='timeline__label'> {label} </p>
-      <p className='timeline__strong_text'> {strongText} </p>
-      <p className='timeline__text'> {text} </p>
+      <span className='timeline__label'> {label} </span>
+      <span className='timeline__strong_text'> {strongText} </span>
+      <span className='timeline__text'> {text} </span>
     </li>
   )
 }

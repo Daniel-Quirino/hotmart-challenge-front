@@ -5,6 +5,9 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { faFireAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+
+
 
 import './Icon.scss';
 
@@ -13,7 +16,7 @@ const renderHotelIcon = () => {
     <FontAwesomeIcon 
       className='timeline__concierge_bell-color'
       icon={faConciergeBell} 
-      size="3x"
+      size="2x"
     />
   )
 }
@@ -23,7 +26,7 @@ const renderAsteriskIcon = () => {
     <FontAwesomeIcon 
       className='timeline__concierge_bell-color'
       icon={faAsterisk} 
-      size="3x"
+      size="2x"
     />
   )
 }
@@ -33,7 +36,7 @@ const renderUsersIcon = () => {
     <FontAwesomeIcon 
       className='timeline__users-color'
       icon={faUsers} 
-      size="3x"
+      size="2x"
     />
   )
 }
@@ -53,7 +56,7 @@ const renderFoodIcon = () => {
     <FontAwesomeIcon 
       className='timeline__food-color'
       icon={faUtensils} 
-      size="3x" 
+      size="2x" 
     />
   )
 }
@@ -63,10 +66,31 @@ const renderHotmartIcon = () => {
     <FontAwesomeIcon 
       className='timeline__hotmart-color'
       icon={faFireAlt} 
-      size="3x" 
+      size="2x" 
     />
   )
 }
+
+const renderArrowUp = () => {
+  return (
+    <FontAwesomeIcon
+      icon={faArrowUp}
+      className="side-bar__card__container-resumo__gasto-recebeu__icon"
+      size="1x"
+    />
+  )
+}
+
+const renderArrowDown = () => {
+  return (
+    <FontAwesomeIcon
+      icon={faArrowDown}
+      className="side-bar__card__container-resumo__gasto-recebeu__icon"
+      size="1x"
+    />
+  )
+}
+
 
 const renderExpanseIcon = (expenseType) => {
   let icon = <></>;
@@ -106,6 +130,12 @@ export const renderFontAwesomeIcon = (cardType, typeCode = '') => {
       break;
     case 'RECEIPT':
       icon = renderReceiptIcon();
+      break;
+    case 'BALANCE_DOWN':
+      icon = renderArrowDown(typeCode);
+      break;
+    case 'BALANCE_UP':
+      icon = renderArrowUp(typeCode);
       break;
     default:
       icon = renderUsersIcon();

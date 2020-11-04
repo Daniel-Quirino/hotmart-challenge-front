@@ -1,3 +1,6 @@
+$header-backgroung-color: #00c5fc;
+$text-default-color: white;
+
 .header__grid {
     display: grid;
     align-items: start;
@@ -10,9 +13,9 @@
 
 .header__title {
     font-size: 20px;
-    color: white;
+    color: $text-default-color;
     justify-self: start;
-    grid-column: 1 / 2;
+    grid-column: 1 / 4;
     grid-row: 1 / 2;
 }
 
@@ -29,14 +32,13 @@
 
 .header__label {
     font-size: 16px;
-    color: white;
+    color: $text-default-color;
     font-weight: bold;
 }
 
 .header__paragraph {
-    color: white;
+    color: $text-default-color;
     font-size: 16px;
-    margin: 0px;
     margin-left: 2px;
 }
 
@@ -60,7 +62,7 @@
 
 
 .header__container {
-    background-color: #00c5fc;
+    background-color: $header-backgroung-color;
     border-radius: 10px;
 }
 
@@ -105,8 +107,6 @@ hr {
     .header__grid {
         align-items: inherit;
     }
-
-
 
     hr {
         width: 300px;

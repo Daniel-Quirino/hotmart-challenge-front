@@ -15,6 +15,7 @@ const Header = () => {
 
   useEffect(() => {
     doGetHeader(dispatch);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -36,7 +37,7 @@ const Header = () => {
     return(
       <li className='header__item' key={label+paragraph}>
         <strong className='header__label' > {label}: </strong>
-        <p className='header__paragraph' > {paragraph} </p>
+        <span className='header__paragraph' > {paragraph} </span>
       </li>
     )
   }
@@ -58,7 +59,7 @@ const Header = () => {
     return costCenters.map(cost => {
       return (
         <li className='header__item' key={cost.id}>
-          <p className='header__paragraph'> {`${cost.percentage}% - ${cost.reviser.name}`} </p>
+          <span className='header__paragraph'> {`${cost.percentage}% - ${cost.reviser.name}`} </span>
         </li>
       )
     });

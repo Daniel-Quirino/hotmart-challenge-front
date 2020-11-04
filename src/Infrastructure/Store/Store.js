@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 const initialState = {
   company: 'Hotmart',
   header: {},
-  timeline: []
+  timeline: [],
+  sideBar: []
 };
 
 export const Store = createContext(initialState);
@@ -25,6 +26,12 @@ export function reducer(state, action) {
         ...state,
         timeline: action.payload
       }
+    case 'SIDE_BAR': {
+      return {
+        ...state,
+        sideBar: action.payload
+      }
+    }
     default:
       return { ...state };
   }

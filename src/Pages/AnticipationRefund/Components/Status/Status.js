@@ -2,27 +2,28 @@ import './Status.scss';
 
 const aproveText = () => {
   return (
-    <p className='timeline__aprove_button'>
+    <span className='timeline__aprove_button'>
       Aprovado
-    </p>
+    </span>
   )
 }
 
 const deductibleText = () => {
   return (
-    <p className='timeline__dedutive_text'>
+    <span className='timeline__dedutive_text'>
       Dedutível
-    </p>
+    </span>
   )
 }
 
 const pendingText = () => {
   return (
-    <p className='timeline__pending_text'>
+    <span className='timeline__pending_text'>
       Pendente
-    </p>
+    </span>
   )
 }
+
 
 export const formatedStatus = (status) => {
   let textStatus = <></>;
@@ -43,4 +44,18 @@ export const formatedStatus = (status) => {
   }
 
   return textStatus;
+}
+
+
+export const openStatusCard = (status) => {
+  return (
+    <div className="status-container">
+      <strong className="status-container__label_status">
+        Status
+      </strong>
+      <span className="status-container__text_status">
+        {status === 'OPEN' ? 'Concluído' : status}
+      </span>
+    </div>
+  )
 }
