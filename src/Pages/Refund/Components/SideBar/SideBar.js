@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { renderFontAwesomeIcon } from '../../Components/Icons/Icons'
+import { renderFontAwesomeIcon } from '../../Components/Icons/Icons';
 import { openStatusCard } from '../../Components/Status/Status'
 import { Store } from '../../../../Infrastructure/Store/Store';
 import doGetSideBar from '../../../../Infrastructure/Actions/SideBar';
@@ -84,28 +84,28 @@ const SideBar = () => {
             </span>
           </div>
           <div className="side-bar__contante">            
-              <div className='side-bar__up-down'>
-                {renderFontAwesomeIcon('BALANCE_DOWN')}
-                <div className='side-bar_flex-column'>
-                  <span className="side-bar__content__label">
-                    Gastou
-                  </span>
-                  <span className="side-bar__card__container-resumo__gasto-recebeu__value">
-                    {`${sideBar.currency.symbol}: ${sideBar.declared}`}
-                  </span>
-                </div>
+            <div className='side-bar__up-down'>
+              {renderFontAwesomeIcon('BALANCE_DOWN')}
+              <div className='side-bar_flex-column'>
+                <span className="side-bar__content__label">
+                  Gastou
+                </span>
+                <span className="side-bar__card__container-resumo__gasto-recebeu__value">
+                  {`${sideBar.currency.symbol}: ${sideBar.declared}`}
+                </span>
               </div>
-              <div className='side-bar__up-down'>
-                {renderFontAwesomeIcon('BALANCE_UP')}
-                <div className='side-bar_flex-column'>
-                  <span className="side-bar__content__label">
-                    Recebeu
-                  </span>
-                  <span className="side-bar__card__container-resumo__gasto-recebeu__value">
-                    {`${sideBar.currency.symbol}: ${sideBar.received}`}
-                  </span>
-                </div>
+            </div>
+            <div className='side-bar__up-down'>
+              {renderFontAwesomeIcon('BALANCE_UP')}
+              <div className='side-bar_flex-column'>
+                <span className="side-bar__content__label">
+                  Recebeu
+                </span>
+                <span className="side-bar__card__container-resumo__gasto-recebeu__value">
+                  {`${sideBar.currency.symbol}: ${sideBar.received}`}
+                </span>
               </div>
+            </div>
           </div>
           <div>
             <div className="side-bar__extract__title">Extrato</div>

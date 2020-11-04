@@ -8,7 +8,6 @@ import doGetTimeline from '../../../../Infrastructure/Actions/Timeline';
 
 import './Timeline.scss';
 
-
 const Timeline = () => {
   const { state, dispatch } = React.useContext(Store);
   const [ timeline, setTimeline ] = React.useState([]);
@@ -40,22 +39,15 @@ const Timeline = () => {
       })
     )
   }
-
-  const renderTimeline = () => {
-    return (
-      <ul className='flex_column' >
-        {renderTimelineList()}
-      </ul>
-    )
-  }
-  
   
   if(!timeline.content)
     return <></>
 
   return (
     <div className='timeline' >
-      {renderTimeline()}
+      <ul >
+        {renderTimelineList()}
+      </ul>
     </div>
   );
 }

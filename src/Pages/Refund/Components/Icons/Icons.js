@@ -7,8 +7,6 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faAsterisk } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-
-
 import './Icon.scss';
 
 const renderHotelIcon = () => {
@@ -75,7 +73,7 @@ const renderArrowUp = () => {
   return (
     <FontAwesomeIcon
       icon={faArrowUp}
-      className="side-bar__card__container-resumo__gasto-recebeu__icon"
+      className="side-bar__icon"
       size="1x"
     />
   )
@@ -85,7 +83,7 @@ const renderArrowDown = () => {
   return (
     <FontAwesomeIcon
       icon={faArrowDown}
-      className="side-bar__card__container-resumo__gasto-recebeu__icon"
+      className="side-bar__icon"
       size="1x"
     />
   )
@@ -144,6 +142,3 @@ export const renderFontAwesomeIcon = (cardType, typeCode = '') => {
 
   return icon;
 }
-
-
-

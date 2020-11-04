@@ -1,5 +1,32 @@
 $header-backgroung-color: #00c5fc;
 $text-default-color: white;
+$default-break-point: 950;
+
+.header__container {
+    background-color: $header-backgroung-color;
+    border-radius: 10px;
+
+    .header__title {
+        font-size: 20px;
+        color: $text-default-color;
+        justify-self: start;
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .header__label {
+        font-size: 16px;
+        color: $text-default-color;
+        font-weight: bold;
+    }
+
+    .header__paragraph {
+        color: $text-default-color;
+        font-size: 16px;
+        margin-left: 2px;
+    }
+}
+
 
 .header__grid {
     display: grid;
@@ -10,36 +37,15 @@ $text-default-color: white;
     padding: 25px 40px;
 }
 
-
-.header__title {
-    font-size: 20px;
-    color: $text-default-color;
-    justify-self: start;
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
+.header__item {
+    margin-bottom: 5px;
 }
+
+
 
 .header__resume {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-}
-
-.header__item {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
-}
-
-.header__label {
-    font-size: 16px;
-    color: $text-default-color;
-    font-weight: bold;
-}
-
-.header__paragraph {
-    color: $text-default-color;
-    font-size: 16px;
-    margin-left: 2px;
 }
 
 .header__coste {
@@ -58,12 +64,6 @@ $text-default-color: white;
 
 .header__education_icon-color {
     color: white;
-}
-
-
-.header__container {
-    background-color: $header-backgroung-color;
-    border-radius: 10px;
 }
 
 hr {
@@ -85,15 +85,12 @@ hr {
     grid-row: 2 / 3;    
 }
 
-.teste {
-    display: flex;
-}
 
-
-@media(max-width: 950px) {
+@media(max-width: $default-break-point) {
     .header__grid {
         display: flex;
         flex-direction: column;
+        align-items: inherit;
     }
 
     .header__education {
@@ -104,14 +101,9 @@ hr {
         flex-direction: column;
     }
 
-    .header__grid {
-        align-items: inherit;
-    }
-
     hr {
         width: 300px;
         height: 0px;
         border-top: 1px solid white;
     }    
 }
-

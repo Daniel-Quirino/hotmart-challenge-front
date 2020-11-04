@@ -3,7 +3,7 @@ import Header from './Components/Header';
 import Timeline from './Components/Timeline';
 import SideBar from './Components/SideBar';
 
-import './AnticipationRefund.scss';
+import './Refund.scss';
 
 const AnticipationRefund = () => {
   return (   
