@@ -1,10 +1,51 @@
-import { renderFontAwesomeIcon } from '../../Components/Icons/Icons';
-
 import './AddExpense.scss';
+import { enumExpenseTypes } from '../../../../Enum/Timeline';
+import { enumCoins } from '../../../../Enum/Coins';
+
+
+const renderCancelButton = (props) => {
+  return (
+    <button className='add-expense-button_cancel' onClick={props.addNewExpense} >
+      Cancelar
+    </button>
+  )
+}
+
+const renderSaveButton = (props) => {
+  return (
+    <button type='submit' className='add-expense-button_save' onClick={props.addNewExpense} >
+      Salvar
+    </button>
+  )
+}
+
+const selectTypes = () => {
+  return (
+    <select placeholder='Tipo'>
+      <option disabled selected value> Tipo </option>
+      <option> {enumExpenseTypes['hotel-fee']} </option>
+      <option> {enumExpenseTypes['food']} </option>    
+    </select>
+  )
+}
+
+
+const selectCoins = () => {
+  return (
+    <select placeholder='Moeda'>
+      <option disabled selected value> Moeda </option>
+      <option> {enumCoins['BRL']} </option>
+      <option> {enumCoins['USA']} </option> 
+      <option> {enumCoins['UK']} </option>    
+    </select>
+  )
+}
+
+
 
 const AddExpense = (props) => {
   return (
-    <div className='add-expense-padding'>
+    <form className='add-expense-padding'>
       <div className='add-expense'>
         <div className='add-expense__title'>
           <span className='add-expense__title__text'> Adicionar Despesa </span>
@@ -16,14 +57,39 @@ const AddExpense = (props) => {
             <span className='add-expense__receipt__choose'>Escolher arquivo</span>
           </div>
         </div>
-        <div className='add-expense__inputs'>
-          <span>INPUTS</span>
+        <div className='add-expense__inputs__form'>
+          <div className="add-expense__inputs__type">
+            <label>Tipo*</label>
+            {selectTypes()}
+          </div>
+          <div className="add-expense__inputs__coin">
+            <label>Moeda*</label>
+            {selectCoins()}
+          </div>
+          <div className="add-expense__inputs__expense_description">
+            <label>Descrição da despesa*</label>
+            <input 
+              type='text'
+              placeholder='Tipo'
+            />
+          </div>
+          <div className="add-expense__inputs__voucher_date">
+            <label>Data do Comprovante*</label>
+            <input 
+              placeholder='Selecione a data'
+              type='date'
+            />
+          </div>
+
         </div>
         <div className='add-expense__buttons'>
-          <span>CANCELAR / ADICIONAR</span>
+          {renderCancelButton(props)}          
+          <div className='add-expense__buttons_margin'>
+            {renderSaveButton(props)}
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   )
 }
 

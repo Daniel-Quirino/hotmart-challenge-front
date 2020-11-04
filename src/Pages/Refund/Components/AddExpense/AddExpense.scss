@@ -1,3 +1,7 @@
+$strong-color: #545b64;
+$save-color: white; 
+$clear-blue: #51c1c3;
+
 .add-expense-padding {
   padding: 30px;
   background-color: white;
@@ -65,8 +69,113 @@
   background-color: gray;
 }
 
+.add-expense__inputs__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1fr 1fr 1fr;
+}
+
+.add-expense__inputs__type {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.add-expense__inputs__coin {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.add-expense__inputs__expense_description {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.add-expense__inputs__voucher_date {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
 .add-expense__buttons {
   grid-column: 1 / 3;
   grid-row: 4 / 5;
-  background-color: red;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
+
+.add-expense-button_cancel {
+  border: 1px $strong-color solid;
+  border-radius: 5px;
+  font-size: 14px;
+  color: $strong-color;
+  height: 30px;
+  width: 80px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.add-expense-button_save {
+  border: 1px $save-color solid;
+  border-radius: 5px;
+  background-color: $clear-blue;
+  font-size: 14px;
+  color: $save-color;
+  height: 30px;
+  width: 80px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.add-expense__inputs__form {
+  
+  label {
+    color: $strong-color;
+    font-weight: bold;
+  }
+}
+
+.add-expense__buttons_margin {
+  margin-left: 10px;
+}
+
+@media(max-width: 950px) {
+  .add-expense {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add-expense__inputs__form {
+    display: flex;
+    flex-direction: column;
+  }   
+  
+  .add-expense__buttons {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .add-expense-button_cancel , .add-expense-button_save {
+    width: 100%;
+    height: 40px;
+    padding-right: 20px;
+  }
+
+  .add-expense__receipt {
+    padding: 0px;
+  }
+
+  .add-expense__buttons_margin {
+    margin: 20px 0px 20px 0px;;
+  }
+
+  .add-expense__inputs__type, .add-expense__inputs__coin, .add-expense__inputs__expense_description, .add-expense__inputs__voucher_date {
+    align-self: center;
+    margin-top: 20px;
+  }
+  
+}
+
