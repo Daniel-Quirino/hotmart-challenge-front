@@ -32,7 +32,6 @@ const renderExpanseCardtype = (label, strongText, text) => {
   )
 }
 
-
 const renderExpanseCardValue = (label, strongText, text) => {
   return (
     <li className='timeline__value' key={label + text}>

@@ -5,12 +5,10 @@ $strong-text-color: #545b64;
 $link-color: #51c1c3;
 $label-color: #d0d3d6;
 
-
 .timeline {
   background-color: $background-color;
   border-radius: 10px;
 }
-
 
 .timeline__grid {
   display: grid;
@@ -24,20 +22,6 @@ $label-color: #d0d3d6;
   padding: 10px 10px 10px 10px; 
   margin: 30px  auto;
 }
-
-
-.timeline__icon {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  padding-left: 30px;
-}
-
-.timeline__icon-flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 .timeline__icon-radius {
   display: flex;
@@ -55,32 +39,12 @@ $label-color: #d0d3d6;
   color: $link-color;
 }
 
-.timeline__action {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+.timeline__type, .timeline__action, .timeline__value, .timeline__status, .timeline__receipt {
   display: flex;
   flex-direction: column;
+  grid-row: 1 / 2;
 }
 
-.timeline__value {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline__status {
-  grid-column: 4 / 5;
-  grid-row: 1 / 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline__receipt {
-  grid-column: 5 / 6;
-  grid-row: 1 / 2;
-  align-self: center;
-}
 
 .timeline__text {
   font-size: 16px;
@@ -101,9 +65,35 @@ $label-color: #d0d3d6;
   margin: 5px;
 }
 
+.timeline__icon {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding-left: 30px;
+}
+
+.timeline__icon-flex {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
 @media(max-width: 950px) {
   .timeline__grid {
     display: flex;
     flex-direction: column;
   }
+
+  .timeline__action, .timeline__icon-flex, .timeline__value, .timeline__status, .timeline__type{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .li:nth-child(even) {background: #FFF}
+    .li:nth-child(odd) {background: #EEE}
+  }
+
+
+
 }

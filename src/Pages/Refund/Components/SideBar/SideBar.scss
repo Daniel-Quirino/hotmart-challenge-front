@@ -96,7 +96,7 @@ $strong-color: #053d4e;
   font-weight: bold;
 }
 
-@media only screen and (max-width: 1000px) {
+@media(max-width: 950px) {
   .side-bar {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
