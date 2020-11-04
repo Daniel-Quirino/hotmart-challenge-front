@@ -2,7 +2,7 @@ import { formatTimeSpanToDefault } from '../../Common/date';
 import { 
   getExpenseType,
   formatedApprovedValue
-} from '../../Pages/AnticipationRefund/Components/Timeline/Components/utils';
+} from '../../Pages/Refund/Components/Timeline/Components/utils';
 
 import timeline from '../../Mocks/timeline';
 

@@ -12,7 +12,7 @@ const renderCancelButton = (props) => {
 
 const renderSaveButton = (props) => {
   return (
-    <button type='submit' className='add-expense-button_save' onClick={props.addNewExpense} >
+    <button type='submit' className='add-expense-button_save' onClick={props.addNewExpense}  >
       Salvar
     </button>
   )
@@ -20,8 +20,8 @@ const renderSaveButton = (props) => {
 
 const selectTypes = () => {
   return (
-    <select placeholder='Tipo'>
-      <option disabled selected value> Tipo </option>
+    <select defaultValue={'DEFAULT'} >
+        <option value="DEFAULT" disabled> Tipo</option>
       <option> {enumExpenseTypes['hotel-fee']} </option>
       <option> {enumExpenseTypes['food']} </option>    
     </select>
@@ -31,8 +31,8 @@ const selectTypes = () => {
 
 const selectCoins = () => {
   return (
-    <select placeholder='Moeda'>
-      <option disabled selected value> Moeda </option>
+    <select  defaultValue={'DEFAULT'} >
+       <option value="DEFAULT" disabled> Moeda </option>
       <option> {enumCoins['BRL']} </option>
       <option> {enumCoins['USA']} </option> 
       <option> {enumCoins['UK']} </option>    
@@ -66,7 +66,7 @@ const AddExpense = (props) => {
             {selectCoins()}
           </div>
           <div className="add-expense__inputs__expense_description">
-            <label>Descrição da despesa*</label>
+            <label>Descrição*</label>
             <input 
               type='text'
               placeholder='Tipo'
@@ -77,6 +77,7 @@ const AddExpense = (props) => {
             <input 
               placeholder='Selecione a data'
               type='date'
+              onChange={() =>{}}
             />
           </div>
 

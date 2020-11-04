@@ -3,7 +3,7 @@ import {
   getTypeByIdentifier, 
   getPurposeByIdentifier, 
   formatAmountOfPeople
-} from '../../Pages/AnticipationRefund/Components/Header/utils';
+} from '../../Pages/Refund/Components/Header/utils';
 
 import header from '../../Mocks/header';
 
