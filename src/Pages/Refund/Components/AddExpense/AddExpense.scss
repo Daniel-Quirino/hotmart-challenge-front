@@ -174,8 +174,11 @@ $clear-blue: #51c1c3;
   }
 
   .add-expense__inputs__type, .add-expense__inputs__coin, .add-expense__inputs__expense_description, .add-expense__inputs__voucher_date {
-    align-self: center;
     margin-top: 20px;
+  }
+
+  input , select {
+    width: 100%;
   }
   
 }
