@@ -6,6 +6,7 @@
 
 - [Conteúdo](#conteúdo)
 - [Início](#início)
+- [Tecnologia Envolvida](#tecnologia-envolvida)
 - [Estrutura de diretórios](#estrutura-de-diretórios)
 - [Executando localmente](#executando-localmente)
 - [Arquitetura](#arquitetura)
@@ -28,11 +29,16 @@ Clone o projeto localmente:
 git clone https://github.com/Daniel-Quirino/hotmart-challenge-front
 ```
 
-## Estrutura de diretórios
-
+## Tecnologia Envolvida
 - Gerenciador de pacotes padrão: [yarn](https://yarnpkg.com/)
-- Back-end (API): [Nodejs](https://nodejs.org/en/)
 - Front-end (Client): [Reactjs](https://pt-br.reactjs.org/)
+- Dependências adicionais:
+    - node-sass: [node-sass](https://yarnpkg.com/package/node-sass)
+    - axios: [axios](https://yarnpkg.com/package/axios)
+    - Dependências para os testes unitários
+
+
+## Estrutura de diretórios
 
 ```bash
 ├── public
@@ -49,9 +55,11 @@ git clone https://github.com/Daniel-Quirino/hotmart-challenge-front
 │    │          └── Store 
 |    │
 │    ├── Pages
-|    │     ├── AntipationRefund
+|    │     ├── Refund
 |    │     └── Components
 |    └── ...       ├── Header
+|                  ├── SideBar
+|                  ├── AddExpense
 |                  └── Timeline
 |
 |
@@ -61,9 +69,10 @@ git clone https://github.com/Daniel-Quirino/hotmart-challenge-front
 ```
 
 ## Executando localmente
+ No diretório raiz do projeto utilizar os seguintes comandos
  
 - Baixar as dependências 
-`yarn start`
+`yarn install`
 
 - Inicializar o projeto 
 `yarn start`
@@ -72,11 +81,11 @@ git clone https://github.com/Daniel-Quirino/hotmart-challenge-front
 A arquitetura pensada para resolver esse problema proposto pela Hotmart foi feita da seguinte maneira:
 
 ### Organização de pastas 
-O projeto foi feito pensando em escalabilidade, portanto foram criados pastas que abarcariam necessidades de todas as páginas e componentes.
+O projeto foi feito pensando em escalabilidade, portanto foram criados pastas que abarcariam necessidades de todas as páginas e componentes. Ou seja, se fossem criadas outras páginas com outrass funcionalidades, a aplicação atenderia a esse crescimento.
 Pastas gerais: Common / Enum / Infrastructure / Mocks / Pages.
 
 ### Common
-A ideia dessa pasta é abarcar todos os métodos que poderiam ser utilizados em todas as aplicações, um exemplo utilizado nesse projeto foi o tratamento de datas, que pode ser algo genérico a toda a aplicação.
+A ideia dessa pasta é abarcar todos os métodos que poderiam ser utilizados em toda a aplicação, um exemplo utilizado nesse projeto foi o tratamento de datas, que pode ser algo genérico a toda a aplicação.
 
 ### Enum
 Pasta em que possui conjuntos fixos de constantes utilizadas na aplicação.
@@ -88,7 +97,7 @@ Nessa pasta possui a arquitetura de chamadas de APIs, ela será explicada com ma
 Nessa pasta possui alguns dados mockados apenas para possibilitar os testes unitários.
 
 ### Pages
-Nesse diretório possui todas as páginas que a aplicação poderia ter, nessa aplicação, como só temos uma única página, essa ideia foi feita apenas pensando em escalabilidade
+Nesse diretório possui todas as páginas que a aplicação poderia ter, porém, nessa aplicação, só foi necessário uma página para desenvolver o desafio prático.
 
 ## Testes
 - Testes unitários:
@@ -105,6 +114,8 @@ Foram feitos testes unitários para algumas funções do javaScript. Foram crian
 ```
 Para testá-los, basta rodar o seguinte comando no diretório raiz
 `yarn test`
+
+Por questões de tempo e priorização a totalidade de testes unitários, bem como os testes de integração e end-to-end (Cypres) foram despriorizados :(
 
 ## Gerenciador de Estado
 O gerenciador de estado utilizado foi o React Context. Essa arquitetura possibilita a termos um estado global na aplicação (arquito Store.js). Dessa forma, podemos ter uma mudança em um componente e essa mudança ser observada em outro componente.
