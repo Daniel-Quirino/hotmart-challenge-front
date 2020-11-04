@@ -16,6 +16,12 @@
   grid-column: 2/3;
 }
 
+.quick_ops__expense-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0px 0px 0px;
+}
+
 
 @media(max-width: 950px) {
   .quick_ops__grid {
