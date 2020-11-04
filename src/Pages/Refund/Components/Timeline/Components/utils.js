@@ -1,4 +1,4 @@
-import { enumExpenseTypes, enumCardTypes } from '../../../../../Enum/Timeline';
+import { enumExpenseTypes, enumCardTypes } from '../../../../../Enum/Enum';
 
 export const getExpenseType = (type) => {
   return enumExpenseTypes[type];

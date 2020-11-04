@@ -1,7 +1,6 @@
 import './AddExpense.scss';
-import { enumExpenseTypes } from '../../../../Enum/Timeline';
-import { enumCoins } from '../../../../Enum/Coins';
-
+import { enumExpenseTypes } from '../../../../Enum/Enum';
+import { enumCoins } from '../../../../Enum/Enum';
 
 const renderCancelButton = (props) => {
   return (

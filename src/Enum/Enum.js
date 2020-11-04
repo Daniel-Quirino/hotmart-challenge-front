@@ -1,3 +1,22 @@
+export const enumCoins  = {
+  'BRL': 'R$',
+  'USA': '$',
+  'UK': '£'
+  //...
+}
+
+export const enumTypes  = {
+  'REFUND': 'Reembolso',
+  'ADVANCE': 'Adiantamento',
+  //...
+}
+
+export const enumPurposes  = {
+  'FRATERNIZATION': 'Confraternização',
+  'EDUCATION': 'Educação',
+  //...
+}
+
 export const enumExpenseTypes  = {
   'hotel-fee': 'Hotel',
   'food': 'Alimentação',
@@ -11,3 +30,4 @@ export const enumCardTypes = {
   'ACCOUNTABILITY_CREATED': 'Aprovação da solicitação'
   //...
 }
+
