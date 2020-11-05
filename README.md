@@ -21,7 +21,7 @@
 - [Arquitetura das APIs](#arquitetura-das-apis)
 - [Testes](#testes)
 - [Servidor e armazenamento de arquivos](#servidor-e-armazenamento-de-arquivos)
-
+- [Pendências](#pendências)
 ## Início
 
 Clone o projeto localmente:
@@ -141,3 +141,9 @@ Store -> Arquivo onde é iniciado e gerenciado e estado da Global da Aplicação
 
 ## Servidor e armazenamento de arquivos
 O projeto foi feito apenas no intuito de ser rodado localmente, não está hospedado em nenhum servidor
+
+## Pendências
+Algumas pendências que esse projeto não atendeu, por questões de tempo disponível, foram as seguintes:
+  - Falta de testes de integração e end-to-end
+  - A feature de adicionar uma despesa, foi deixada por último, portanto não foi possível finalizá-la a tempo.
+  - Criar um arquivo para compartilhar as variáveis de cores do SASS
