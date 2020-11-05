@@ -17,11 +17,13 @@
   - [Mocks](#mocks)
   - [Pages](#pages)
   - [Testes](#testes)
+  - [Página Principal](#pagina-principal)
 - [Gerenciador de Estado](#gerenciador-de-estado)
 - [Arquitetura das APIs](#arquitetura-das-apis)
 - [Testes](#testes)
 - [Servidor e armazenamento de arquivos](#servidor-e-armazenamento-de-arquivos)
 - [Pendências](#pendências)
+
 ## Início
 
 Clone o projeto localmente:
@@ -98,6 +100,22 @@ Nessa pasta possui alguns dados mockados apenas para possibilitar os testes unit
 
 ### Pages
 Nesse diretório possui todas as páginas que a aplicação poderia ter, porém, nessa aplicação, só foi necessário uma página para desenvolver o desafio prático.
+
+### Página Principal
+A página feita para atender ao desafio se encontra no arquivo Refund.js. Essa página possui alguns componentes, que, por questões de organização, foram modularizados. Esses componentes são: Header / Timeline / SideBar / AddExpense. 
+
+```bash
+│
+├── src
+│    └── Pages
+|          ├── Refund
+|          └── Components
+|                  ├── Header
+|                  ├── SideBar
+|                  ├── AddExpense
+|                  └── Timeline
+└── README.md
+```
 
 ## Testes
 - Testes unitários:
